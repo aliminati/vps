@@ -31,7 +31,7 @@ echo "deb-src http://nginx.org/packages/debian/ squeeze nginx" >> /etc/apt/sourc
 wget http://nginx.org/packages/keys/nginx_signing.key
 cat nginx_signing.key | apt-key add -
 
-wget https://raw.github.com/gist/3712985/8bb4a1a46b9394a222e8c871a46f92ec91ab7fb0/setup-debian.sh
+wget https://raw.github.com/fwayme/vps/master/setup-debian.sh
 
 bash setup-debian.sh system
 bash setup-debian.sh exim4
@@ -85,8 +85,8 @@ cp -rf /etc/nginx /etc/nginx.new_install_backup
 rm /etc/nginx -r
 cp -rf /etc/nginx.original /etc/nginx
 
-# Setting auto run nginx daemon
-wget https://bitbucket.org/fway/vps/raw/951767d729b1/nginx.init.d -O /etc/init.d/nginx
+# Setting auto run nginx daemon. /etc/init.d/nginx
+wget https://raw.github.com/fwayme/vps/master/nginx -O /etc/init.d/nginx
 
 # Setting nginx config
 cat > /etc/nginx/nginx.conf <<END
